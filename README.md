@@ -2,6 +2,6 @@
 
 Simple UI experiment using Flutter creating Food Delivery App Interface
 
-![40%](food_001.png)
-![40%](food_002.png)
-![40%](food_003.png)
+![50%](food_001.png)
+![50%](food_002.png)
+![50%](food_003.png)
