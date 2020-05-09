@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_delivery_ui/screens/cart_screen.dart';
 import 'package:flutter_food_delivery_ui/widgets/rating_stars.dart';
 import '../data/data.dart';
 import '../models/restaurant.dart';
@@ -34,11 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
-                  child: Image(
-                    height: 150.0,
-                    width: 150.0,
-                    image: AssetImage(restaurant.imageUrl),
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: restaurant.imageUrl,
+                    child: Image(
+                      height: 150.0,
+                      width: 150.0,
+                      image: AssetImage(restaurant.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 Container(
@@ -60,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         restaurant.address,
                         style: TextStyle(
-                          fontSize: 14.0,
+                          fontSize: 12.0,
                           fontWeight: FontWeight.bold
                         ),
                         overflow: TextOverflow.ellipsis,
@@ -107,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 20.0,
               ),
             ),
-            onPressed: () {}, 
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => CartScreen())), 
           ),
         ],
       ),
